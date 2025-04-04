@@ -1,0 +1,335 @@
+:root {
+    --background-color: #18212c;
+    --primary-color: #10161d;
+    --primary-color-rgb: 16, 22, 29;
+    --secondary-color: #1e262c;
+    --third-color: #f2ede6;
+    --fourth-color: #3f4e59;
+}
+
+@font-face {
+    font-family: 'Panton';
+    src: url('fonts/PantonNarrow-Trial-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Panton", sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--third-color);
+    height: 115vh;
+}
+
+body.home-page {
+    background-image: url(https://wallpapercave.com/wp/wp7930320.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+body:not(.home-page) {
+    background-color: var(--background-color);
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: var(--primary-color);
+    height: 8rem;
+    padding: 0rem 12rem;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.header-logo img {
+    width: 8rem;
+    object-fit: contain;
+    transition: transform 0.2s ease-in-out;
+}
+
+.header-items {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 20px;
+}
+
+.header-items a {
+    text-decoration: none;
+    color: var(--third-color);
+    transition: color 0.3s ease;
+}
+
+.header-items a:hover {
+    color: var(--fourth-color);
+}
+
+.header-logo img:hover {
+    animation: shake 0.8s infinite;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .header-content {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+ .header-logo img {
+    display: none;
+ }    
+}
+
+.main-body-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.main-body-items {
+    text-align: center;
+    padding-top: 10rem;
+    max-width: 60%;
+}
+
+.download-now {
+    background-color: var(--third-color);
+    color: var(--primary-color);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    border: none;
+    text-decoration: none;
+    font-size: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.download-now:hover {
+    background-color: var(--primary-color);
+    color: var(--third-color);
+    border: none;
+}
+
+.body-box-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 60%;
+    place-items: center;
+    margin: 0 auto;
+    gap: 4rem;
+    justify-content: center;
+    align-content: center;
+    margin-top: 10rem;
+    cursor: pointer;
+}
+
+.box1,
+.box2,
+.box3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(var(--primary-color-rgb), 0.6);
+    height: 14rem;
+    width: 25rem;
+    text-align: center;
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+@media screen and (max-width: 1280px) {
+    .body-box-wrapper {
+        grid-template-columns: repeat(1, 1fr);
+        max-width: 90%;
+        gap: 2rem;
+    }
+    .box1,
+    .box2,
+    .box3 {
+        width: 100%;
+        height: 10rem;
+    }
+}
+
+.staff-team-members {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 80%;
+    margin: 0 auto;
+    place-items: center;
+    text-align: center;
+}
+
+.staff-member {
+    margin-top: 4rem;
+}
+
+.staff-member img {
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.staff-member img:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 1200px) {
+    .staff-team-members {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .staff-member img {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .staff-team-members {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .staff-member img {
+        width: 100%;
+    }
+    
+}
+
+.support-header {
+    background-image: url(images/notmypicturenetherking.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 20rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar::-webkit-search-decoration,
+.search-bar::-webkit-search-cancel-button,
+.search-bar::-webkit-search-results-button,
+.search-bar::-webkit-search-results-decoration {
+    display: none;
+}
+
+.search-bar {
+    width: 30%;
+    height: 3rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--third-color);
+    margin-top: 2rem;
+    padding-left: 1rem;
+}
+
+.search-bar:active,
+.search-bar:focus {
+    outline: none; 
+    box-shadow: 0 0 5px var(--third-color);
+}
+
+.support-grid {
+    padding: 0rem 12rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 3rem 4rem;
+}
+
+.support-item {
+    margin-top: 4rem;
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 14rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1200px) {
+    .support-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .support-item {
+        height: 12rem;
+    }
+    .support-header {
+        font-size: 1.5rem;
+    }
+    .search-bar {
+        width: 50%;
+        height: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .support-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+footer {
+    text-align: center;
+    margin-top: 4rem;
+    padding: 2rem 0;
+}
+
+.footer-socials {
+    margin-top: 1rem;
+}
+
+.footer-socials a {
+    text-decoration: none;
+    color: var(--third-color);
+    margin: 0 0.3rem;
+    transition: color 0.3s ease;
+}
